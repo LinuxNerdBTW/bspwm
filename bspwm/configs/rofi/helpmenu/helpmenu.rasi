@@ -1,0 +1,55 @@
+configuration {
+  font: "Hack Nerd Font 12";
+  dmenu { 
+    display-name: "BSPWM Key Bindings";
+  }
+}
+
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+
+    width: 1000;
+    height: 600;
+    background-color: @active-background;
+    foreground-color: @active-foreground;
+}
+
+
+
+
+window {
+  transparency: "real";
+  background-color: @active-background;
+  padding: 5px;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  children: [prompt];
+}
+
+prompt {
+  padding: 5px;
+  text-color: @active-background;
+  background-color: @border-color;
+  border-radius: 10px;
+}
+
+listview {
+  lines: 8;
+}
+
+element {
+  children: [element-text];
+}
+
+element-text {
+  padding: 5px;
+  text-color: @normal-foreground;
+}
+
+

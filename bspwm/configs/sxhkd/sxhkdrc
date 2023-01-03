@@ -1,20 +1,20 @@
 # Launch Help Menu
 super + s 
- ~/.config/bspwm/bin/helpmenu
+ ~/.config/bspwm/configs/rofi/helpmenu/helpmenu
 
 # Launch Rofi
 super + a
 	rofi -show drun  -theme ~/.config/bspwm/configs/rofi/config.rasi
 # Launch [ htop , nvim , btop]
 ctrl + alt + {h,v,b,}
-	st -e {htop,nvim,btop}
+	kitty -e {htop,nvim,btop}
 
 # Launch tmux
 ctrl + alt + {t}
-	st -e {tmux}
-# Launch [ browser, pactl, st, thunar]
-super + {v,Return,e}
-	{pavucontrol, st,thunar }
+	kitty -e {tmux}
+# Launch [ browser, pactl, kitty, thunar]
+super + {w,v,Return,e}
+	{qutebrowser -C ~/.config/bspwm/configs/qutebrowser/config.py,pavucontrol, kitty -c ~/.config/bspwm/configs/kitty/kitty.conf,thunar }
 
 # Toogle Bar 
 super + b

@@ -30,14 +30,14 @@ bspc config presel_feedback_color "$color1"
 # Autorun Programs
 
 xrdb -merge ~/.Xresources &
-xautolock -time 5 -locker i3lock-fancy &
+pkill xautolock; xautolock -time 5 -locker i3lock-fancy &
 pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/bspwm/configs/sxhkd/sxhkdrc &
 feh --bg-fill "$(< "${HOME}/.cache/wal/wal")" &
 sh ~/.config/bspwm/configs/polybar/launch.sh &
-picom --config ~/.config/bspwm/configs/picom/picom.conf --experimental-backends &
-redshift &
-libinput-gestures-setup start &
-dunst -conf ~/.config/bspwm/configs/dunst/dunstrc &
+pkill picom; picom --config ~/.config/bspwm/configs/picom/picom.conf --experimental-backends &
+pkill redshift; redshift &
+pkill libinput; libinput-gestures-setup start &
+pkill dunst; dunst -conf ~/.config/bspwm/configs/dunst/dunstrc &
 
 
 
