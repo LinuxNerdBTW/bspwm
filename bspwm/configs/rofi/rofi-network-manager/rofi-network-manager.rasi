@@ -24,7 +24,6 @@ window {
   border-radius: 8px;
   location: center;
   fullscreen: false;
-  padding: 10px;
   height: calc(10% max 500);
 }
 
@@ -57,16 +56,19 @@ prompt {
 
 listview {
   padding: 10px;
+  background-color: @active-background;
 }
 
 element {
   children: [ element-text];
+  background-color: @active-background;
   padding: 0px;
 }
 
 
 element-text {
   padding: 10px 0;
+  background-color: @active-background;
   text-color: @active-foreground;
 }
 
