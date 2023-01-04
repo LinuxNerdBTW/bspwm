@@ -3,19 +3,15 @@ super + s
  ~/.config/bspwm/configs/rofi/helpmenu/helpmenu
 
 # Launch Rofi
-super + a
+super + d 
 	rofi -show drun  -theme ~/.config/bspwm/configs/rofi/config.rasi
-# Launch [ htop , nvim , btop]
-ctrl + alt + {h,v,b,}
-	kitty -e {htop,nvim,btop}
 
 # Launch tmux
-ctrl + alt + {t}
-	kitty -e {tmux}
+ctrl + t
+	st -e {tmux}
 # Launch [ browser, pactl, kitty, thunar]
 super + {w,v,Return,e}
-	{qutebrowser -C ~/.config/bspwm/configs/qutebrowser/config.py,pavucontrol, kitty -c ~/.config/bspwm/configs/kitty/kitty.conf,thunar }
-
+	{qutebrowser -C ~/.config/bspwm/configs/qutebrowser/config.py,pavucontrol, st,thunar }
 # Launch Network Manager
 super + n 
   ~/.config/bspwm/configs/rofi/rofi-network-manager/rofi-network-manager.sh
@@ -27,11 +23,12 @@ super + b
 # Change wallpaper
 super + shift + r
   wal -n -i ~/.config/bspwm/metis-wallpapers/collections/ && feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"
-
-# Take a screenshot
-Print
-	flameshot gui
-
+# Take a screenshot with selection
+super + Print
+	import ~/Pictures/$(date +%Y-%m-%d-%H:%M:%S).png
+# Fullscreen screenshot
+Print 
+  import -window root ~/Pictures/$(date +%Y-%m-%d-%H:%M:%S).png 
 # Brighness Up
 XF86MonBrightnessUp
 	brightnessctl set +1%
@@ -50,7 +47,7 @@ XF86AudioMute
 	amixer set Master toggle
 	
 # Lockscreen
-ctrl + alt + l
+super + l
     i3lock-fancy
 
 # Reload Keybindings
