@@ -1,7 +1,7 @@
 configuration {
   font: "Hack Nerd Font 12";
   dmenu { 
-    display-name: "BSPWM Key Bindings";
+    display-name: "Key Bindings";
   }
 }
 
@@ -19,9 +19,9 @@ configuration {
 
 
 window {
-  transparency: "real";
   background-color: @active-background;
-  padding: 5px;
+  padding: 80px;
+  fullscreen: true;
 }
 
 mainbox {
@@ -33,7 +33,8 @@ inputbar {
 }
 
 prompt {
-  padding: 5px;
+  padding: 6px;
+  font: "Cantarell 12";
   text-color: @active-background;
   background-color: @border-color;
   border-radius: 10px;

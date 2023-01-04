@@ -16,6 +16,10 @@ ctrl + alt + {t}
 super + {w,v,Return,e}
 	{qutebrowser -C ~/.config/bspwm/configs/qutebrowser/config.py,pavucontrol, kitty -c ~/.config/bspwm/configs/kitty/kitty.conf,thunar }
 
+# Launch Network Manager
+super + n 
+  ~/.config/bspwm/configs/rofi/rofi-network-manager/rofi-network-manager.sh
+
 # Toogle Bar 
 super + b
   ~/.config/bspwm/configs/polybar/launch.sh &
